@@ -28,9 +28,12 @@ import EasyPayLogo from "../../imports/EasyPay";
     const location = useLocation();
   
   const handleNavClick = (path: string, e: React.MouseEvent) => {
+    // Clicking a link to the page you are already on: react-router treats this
+    // as a no-op, so scroll back to the top instead. A full reload here would
+    // hit the server for a path that only exists client-side.
     if (location.pathname === path) {
       e.preventDefault();
-      window.location.reload();
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
     setIsMenuOpen(false);
   };
