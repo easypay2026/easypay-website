@@ -15,6 +15,8 @@ import { createPortal } from "react-dom";
 import { handleEmailClick } from "../utils/email";
 import { isBannerDismissed, dismissBanner } from "../utils/announcementBanner";
 
+const STATEMENT_PATH = "/statement-of-non-affiliation";
+
 
 import EasyPayLogo from "../../imports/EasyPay";
 
@@ -34,6 +36,21 @@ import EasyPayLogo from "../../imports/EasyPay";
     if (location.pathname === path) {
       e.preventDefault();
       window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+    setIsMenuOpen(false);
+  };
+
+  const isOnStatementPage = location.pathname === STATEMENT_PATH;
+
+  // "Read All" while already on the statement page has nowhere to navigate, so
+  // reload it instead. Every click refreshes again, with no click limit.
+  // Reloading a client-only route needs the host to rewrite unknown paths to
+  // index.html; vercel.json does that, otherwise this would land on a 404.
+  const handleStatementClick = (e: React.MouseEvent) => {
+    if (isOnStatementPage) {
+      e.preventDefault();
+      window.location.reload();
+      return;
     }
     setIsMenuOpen(false);
   };
@@ -110,8 +127,9 @@ import EasyPayLogo from "../../imports/EasyPay";
                 Solemn Statement: Our company has not issued any virtual currency and is strictly not affiliated with the &ldquo;EasyPay&rdquo; crypto-payment project.
               </span>
               <Link
-                to="/statement-of-non-affiliation"
-                onClick={(e) => handleNavClick("/statement-of-non-affiliation", e)}
+                to={STATEMENT_PATH}
+                onClick={handleStatementClick}
+                aria-current={isOnStatementPage ? "page" : undefined}
                 className="font-semibold underline underline-offset-2 decoration-white/50 hover:decoration-white transition-colors text-[14px]"
               >
                 Read All
@@ -173,9 +191,11 @@ import EasyPayLogo from "../../imports/EasyPay";
               </div>
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
                 <Link
-                  to="/statement-of-non-affiliation"
+                  to={STATEMENT_PATH}
                   onClick={(e) => {
-                    handleNavClick("/statement-of-non-affiliation", e);
+                    handleStatementClick(e);
+                    // Redundant when the click triggered a reload, but needed
+                    // when navigating in from another page.
                     setShowStatement(false);
                   }}
                   className="w-full sm:flex-1 h-[44px] flex items-center justify-center border border-gray-200 text-[#1B1D21] text-[14px] font-semibold rounded-xl hover:bg-gray-50 transition-colors"
