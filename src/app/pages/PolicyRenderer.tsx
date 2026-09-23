@@ -1,6 +1,18 @@
 import React from 'react';
 
 export function PolicyRenderer({ content }: { content: string }) {
+  const titleHeadings = new Set([
+    'Terms and Conditions',
+    'Intellectual Property',
+    'Permitted Use',
+    'Liability',
+    'Changes to Terms',
+    'Disclaimer',
+    'Legal Age',
+    'Governing Law and Disputes',
+    'Contact',
+  ]);
+
   return (
     <div className="w-full flex flex-col">
       {content.split('\n').map((line, idx) => {
@@ -11,6 +23,7 @@ export function PolicyRenderer({ content }: { content: string }) {
         const isMainHeading = 
           trimmed === 'Acceptable Use Policy' || 
           trimmed === 'Privacy Policy' || 
+          titleHeadings.has(trimmed) ||
           /^[A-Z\s]+$/.test(trimmed) || 
           /^\d+\.\s+[A-Za-z\s]+/.test(trimmed);
 

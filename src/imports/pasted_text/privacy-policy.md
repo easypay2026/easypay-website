@@ -1,10 +1,10 @@
 Privacy Policy
-Last updated: 1 Jan, 2026
+Last updated: 20 September 2026
 This Privacy Policy (the "Policy") explains how we, Easy Pay International Investment Co.,Limited ("we", "us" or "ours"), collect, disclose, and protect information about you, the merchant company and its directors, shareholders, employees, contractors, and agents (together, the "Merchant") which are users of the Services. By using our Services, you acknowledge and agree to be bound by it. If you do not agree to this Policy, please stop using the Services immediately.
-This Policy is applicable to you when you use or interact with our Services anywhere in the world, or our mobile app, or other channel (collectively, "Channels"). Depending on the context, "you" may mean any of the End User or Merchant.
+This Policy is applicable to you when you use or interact with our Services anywhere in the world, whether through our websites or any other channel (collectively, "Channels"). Depending on the context, "you" may mean any of the End User or Merchant.
 DEFINITIONS
 1.1 End User: an individual user who uses our Services on behalf of the Merchant or who is the recipient of the transfer made via the Services.
-1.2 In-App Service Provider: the institutions which provide third party service ("In-App Services") within the EASYPAY Platform. You can register and use the In-App Services pursuant to the Terms & Conditions of EASYPAY Connect.
+1.2 Data Protection Law: the Personal Data (Privacy) Ordinance (Cap. 486 of the Laws of Hong Kong) and any other data protection or personal information law applicable to the processing of Personal Information under this Policy.
 1.3 Information: personal Information, and the information specified under section 3.
 1.4 Merchant: the merchant company and its Representatives.
 1.5 Partner: the institutions with which we partner to jointly provide products and services. We may partner with other institutions to jointly provide products and services. We provide our Partners with an End User's personal data concerning the activities of both the Partner and the respective End User. When you (as an End User or Representative) interact with a Partner, your Personal Information will be managed according to the Partner's privacy policies, not this Policy.
@@ -34,7 +34,7 @@ b. processing payments and utilising our products;
 c. providing customer support;
 d. enabling access and utilisation of EASYPAY products and platforms;
 e. evaluating your application for using the Services.
-4.2.2 to prevent fraud, misuse or breaches of the Terms of EASYPAY Business Account & Connect to Bank for End Users, which includes:
+4.2.2 to prevent fraud, misuse or breaches of the Master Merchant Agreement and other applicable service terms, which includes:
 a. verifying your identity or authenticating your access to an account or other information;
 b. managing risk, fraud and abuse of the Services and Channels;
 c. conducting manual or system monitoring to protect against fraud and other harmful activities.
@@ -47,23 +47,23 @@ d. sending newsletters, other content, or marketing and promotional messages and
 4.3.1 to fulfil our legal obligations and provide the Services, which includes:
 a. creating your account for the Services as per your request;
 b. verifying your identity or authenticating your right to access an account or other information.
-4.3.2 to prevent fraud, misuse or breaches of the Terms of EASYPAY Business Account & Connect to Bank for End Users, which includes:
+4.3.2 to prevent fraud, misuse or breaches of the Master Merchant Agreement and other applicable service terms, which includes:
 a. verifying your identity or authenticating your right to access an account or other information;
 b. managing risk, fraud and abuse of our Services and Channels;
 c. conducting manual or system monitoring to protect against fraud and other harmful activities.
 4.4 Transaction Data: We may collect financial information such as bank account details (account number, routing number), credit or debit card numbers, billing address, payment method information, location, transaction amount, date of transaction or tax information. We use such information for:
 a. sending of your requests for Transactions and their execution through our Partner;
 b. establishing an Account for you, which tracks funds collected from your use of our payment terminal and facilitates your Transactions;
-c. if applicable, issuing a payment card to you under a card program managed by the Partner. Additional terms governing the use of the payment card will apply;
+c. processing Refunds, Chargebacks, reversals and related adjustments in respect of your Transactions;
 d. fulfilling our legal and regulatory reporting obligations.
 4.5 Beneficiary Information: We may collect information about the parties to the transaction, the designated recipient (including the recipient's bank account information), the source of the funds, the reason for the transaction, the devices and payment methods used to complete transactions. We use such information for:
 a. sending your requests for Transactions and their execution through our Partner;
-b. preventing fraud, misuse or breaches of the Terms of EASYPAY Business Account & Connect to Bank for End Users;
+b. preventing fraud, misuse or breaches of the Master Merchant Agreement and other applicable service terms;
 c. verifying your identity or authenticating your right to access an account or other information;
 d. managing risk, fraud and abuse of the Services and Channels;
 e. conducting manual or system monitoring to protect against fraud and other harmful activities.
 4.6 Card Related Information: We use card numbers and details for:
-a. issuing a payment card to you under a card program managed by our Partner;
+a. enabling card payment acceptance through licensed acquiring and gateway partners;
 b. validating the authenticity of the transaction;
 c. preventing fraud.
 4.7 Business Entity Information: If you are using the Services on behalf of a Merchant, we may collect information about the Merchant including: the organisational structure of the company, the company address, the product and service offerings, website domain name used by the business, information about the beneficial owners of the business, tax classification of the business, tax identification number(s), company registration number(s),and its tax residence. We also may collect entity formation documents or other corporate records. We use such information:
@@ -73,7 +73,7 @@ b. providing customer support through our Partner;
 c. enabling you to access and use the Channels;
 d. evaluating your application to use the Services;
 e. where applicable, meeting our legal obligations and conducting required and regulatory reporting, including to tax authorities.
-4.7.2 to prevent fraud, misuse or breaches of the Terms of EASYPAY Business Account & Connect to Bank for End Users, which includes:
+4.7.2 to prevent fraud, misuse or breaches of the Master Merchant Agreement and other applicable service terms, which includes:
 a. verifying your identity or authenticating your right to access an account or other information;
 b. managing risk, fraud and abuse of our Services and Channels;
 c. conducting manual or system monitoring to protect against fraud and other harmful activities.
@@ -83,21 +83,21 @@ b. sending you technical notices, updates, security alerts and other administrat
 c. providing information related to your transactions including confirmations, receipts and tracking notices.
 4.8 Log Data: When you access the Services, we collect server logs which may include information such as access times and dates, pages viewed and other system activities, including the third-party site you were using before accessing our Services. We use such information for:
 a. providing the Services;
-b. preventing fraud, misuse or breaches of the Terms of EASYPAY Business Account & Connect to Bank for End Users;
+b. preventing fraud, misuse or breaches of the Master Merchant Agreement and other applicable service terms;
 c. understanding your use of and improving the Services.
 4.9 Device Information: We may obtain information about the devices you use to access the Services and the Channels including: the device type, operating systems and versions, the device manufacturer and model, preferred languages, and plugins. We use such information for:
 a. providing the Services;
-b. preventing fraud, misuse or breaches of the Terms of EASYPAY Business Account & Connect to Bank for End Users;
+b. preventing fraud, misuse or breaches of the Master Merchant Agreement and other applicable service terms;
 c. understanding your use of and improving the Services.
 4.10 Usage Information: We collect information about how you interact or engage with the Channels and how you use the Services including your user preferences and other settings selected by you. This information may be collected if you visit our Channels and regardless of whether or not you establish an account with us or conduct a transaction. We use such information for:
 a. providing the Services;
 b. evaluating your satisfaction with our Services, platform and features;
 c. developing new products or enhancing existing products and services;
 d. monitoring and analysing trends, usage and other user activities on our Channels to optimise user experience and to improve the Services.
-4.11 Location Information: When you use certain features of the Services, we may collect information about your precise or approximate location as determined by data such as your IP address or mobile device GPS. Most mobile devices allow you to control or disable the use of geolocation services for applications by changing preferences on your mobile device.We use such information for:
+4.11 Location Information: When you use certain features of the Services, we may collect information about your precise or approximate location as determined by data such as your IP address or, where you have enabled location access in your browser, your device’s location services. You can control or disable location access at any time in your browser or device settings. We use such information for:
 a. providing the Services;
 b. enabling you to access and use the Account;
-c. managing risk, fraud and abuse of our Services and Channels or breaches of the Terms of EASYPAY Business Account & Connect to Bank for End Users;
+c. managing risk, fraud and abuse of our Services and Channels or breaches of the Master Merchant Agreement and other applicable service terms;
 d. conducting manual or system monitoring to protect against fraud and other harmful activities.
 4.12 Communications Data: We may collect information related to your interactions and communications with us, which may include email messages, chat sessions, text messages, and phone calls that we exchange with you. We use such information for:
 a. responding to your inquiries and customer support requests;
@@ -122,7 +122,7 @@ b. detect, prevent or otherwise address security, fraud or technical issues;
 c. protect our rights, property, privacy, or security, or that of others, as permitted by law; or
 d. comply with relevant law, legal process or governmental requests or orders.
 5.2.6 Reorganisation: In the event that our company is engaged in a corporate merger, acquisition, consolidation, reorganisation, sale, joint venture, assignment, transfer, or other disposition of all or part of our business, assets, or stock (including bankruptcy or similar proceedings), we may share data with third parties during the negotiation process. If your Information becomes subject to a different privacy policy as a result, we will make reasonable efforts to notify you in advance. Additionally, there may be situations where we need to disclose Information to a third party in connection with a commercial transaction where we or any of our affiliates are seeking financing, investment, or funding.
-5.2.7 In-App Service Provider: Before registering and using In-App Service in EASYPAY Connect, you should review the privacy policy of any In-App Service Provider that will gain access to your Personal Data. In your use of In-App Services, we may also collect different types of information such as technical information and business information from you depending on your use of the In-App Services, including personal data, and In-App Services Providers may also provide data arising from your usage of the In-App Services to us (collectively referred as "Merchant Data"). We will collect, store and process the Merchant Data in accordance with section 4 of this Policy.
+5.2.7 Professional Advisers and Compliance Service Providers: We may disclose Information to our auditors, legal and other professional advisers, and to third-party screening and monitoring service providers engaged for compliance and risk-management purposes (including sanctions, politically exposed person, adverse media and merchant website screening and ongoing monitoring), each of which is bound by statutory or contractual obligations of confidentiality.
 5.2.8 Third Party Requested by You: If you request (as part of the Services provided to you) or provide your consent, we may share your information including your Personal Information with a third party not defined in this Policy.
 DATA RETENTION
 6.1 We will retain your Information for as long as necessary to comply with relevant laws, fulfil any ongoing obligations to you, or for our internal business needs, as permitted by applicable law.
@@ -134,15 +134,15 @@ d. to comply with legal process orders or law enforcement requests;
 e. to collect any fees or other outstanding amount owed and payable to us by you;
 f. to comply with our tax, accounting, and financial and regulatory reporting obligations;
 g. where required by our contractual commitments to our ecosystem or financial partners;
-h. to resolve any disputes or enforce our EASYPAY Business Account & Connect to Bank End User Terms or other applicable agreements or policies;
+h. to resolve any disputes or enforce the Master Merchant Agreement or other applicable agreements or policies;
 i. to take any other action or exercise any other right in accordance with applicable law.
 6.3 Once a relevant retention period has expired, EASYPAY will either destroy the Information or, if applicable, sufficiently anonymize it to remove any identifiable elements.
 YOUR RIGHTS AND CHOICES
 7.1 If you are located in Hong Kong, you have legal rights concerning the Personal Information we hold about you, to the extent permitted under applicable laws and regulations. You have the right to submit a subject access request to obtain a copy of the data we process about you, request correction of your data, and object to the use of your Personal Information for direct marketing purposes. Please note that there may be a fee charged by us for fulfilling a data access request.
 DEVICE & MARKETING
-8.1 Device Permissions: Most mobile devices allow you to disable location services or revoke consent for applications to access your camera, photo library, or send you push notifications. You can refer to your device settings to restrict the collection of certain information.
+8.1 Device Permissions: Your browser or device may allow you to disable location access or notifications for our websites. You can refer to your browser or device settings to restrict the collection of certain information.
 8.2 Notifications: We may occasionally send you notifications that we deem necessary, such as notifications for temporary service suspensions due to maintenance or security, privacy, or administrative-related communications. You cannot opt out of these service-related notifications as they are not promotional in nature.
-8.3 Marketing Opt-Out: Marketing Opt-Out: As explained in section 4, we only send promotional communications with your consent. If you wish to opt out of receiving such promotional communications from us, you can contact our customer service to modify your preferences. Please note that if you choose to opt out of marketing-related emails, you will still receive non-promotional messages that are necessary for providing our services, such as transactional receipts and messages related to your account or our relationship with you.
+8.3 Marketing Opt-Out: As explained in section 4, we only send promotional communications with your consent. If you wish to opt out of receiving such promotional communications from us, you can contact our customer service to modify your preferences. Please note that if you choose to opt out of marketing-related emails, you will still receive non-promotional messages that are necessary for providing our services, such as transactional receipts and messages related to your account or our relationship with you.
 ADVERTISING AND ANALYTICS
 9.1 We may collaborate with third-party partners to present advertisements to you on websites you visit. These partners utilise cookies and other technologies to collect information about your activities on our websites, as well as other websites you visit. This information is used to deliver targeted advertising based on your browsing history and interests.
 SECURITY

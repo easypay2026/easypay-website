@@ -1,8 +1,6 @@
-Acceptable Use Policy
-
 This Acceptable Use Policy ("AUP") sets forth the rules and restrictions that you must comply with when using the payment processing services ("Services") provided by Easy Pay International Investment Co.,Limited ("Company", "we", or "our"). By using our Services, you agree to comply with all terms of this AUP.
 1. Scope of Policy
-This AUP applies to all users of the Company's Services, including but not limited to merchants, partners, end users, and their authorized representatives. This policy supplements our Terms of Service and has equal legal effect.
+This AUP applies to all users of the Company's Services, including but not limited to merchants, partners, end users, and their authorized representatives. This AUP supplements the Master Merchant Agreement or other service agreement entered into between the Company and the relevant user. In the event of any conflict between this AUP and the Master Merchant Agreement or such other agreement, the Master Merchant Agreement or such other agreement shall prevail.
 2. Acceptable Uses
 You may use our Services for the following legitimate business activities:
 - Legitimate transactions of goods and services;
@@ -45,11 +43,11 @@ Violation of this AUP may result in the following consequences:
 - Legal Action: In cases of serious violations, we reserve the right to take legal action, including but not limited to reporting to law enforcement, filing lawsuits, or seeking damages.
 7. Reporting Violations
 If you discover any violations of this AUP, please contact us immediately through:
-- Email to our compliance department;
+- Email us at support@easypayx.com;
 - Report through our customer service channels;
 - Contact your account manager.
 We will promptly investigate reports and take appropriate measures.
 8. Policy Updates
 We reserve the right to modify this AUP at any time. Material changes will be notified to you via email, website announcements, or other appropriate means. Continued use of our Services constitutes your acceptance of the updated AUP. We recommend that you review this policy regularly to stay informed of the latest changes.
 9. Applicable Law
-This AUP is governed by the laws of the Hong Kong Special Administrative Region of the People's Republic of China and the laws of the People's Republic of China. Any disputes shall be resolved through friendly negotiation; if negotiation fails, disputes shall be submitted to a court with jurisdiction.
+This AUP is governed by the laws of the Hong Kong Special Administrative Region of the People’s Republic of China. Any dispute arising out of or in connection with this AUP shall be resolved in accordance with the dispute resolution provisions of the Master Merchant Agreement or other service agreement between the Company and the relevant user. In the absence of such an agreement, the dispute shall be referred to and finally resolved by arbitration administered by the Hong Kong International Arbitration Centre (HKIAC) under the HKIAC Administered Arbitration Rules in force when the Notice of Arbitration is submitted; the seat of arbitration shall be Hong Kong; the number of arbitrators shall be one (1); and the arbitration proceedings shall be conducted in English.

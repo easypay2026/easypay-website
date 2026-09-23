@@ -2,11 +2,17 @@ import { Navigation } from "../components/Navigation";
 import { Footer } from "../components/Footer";
 import { ContactUsCta } from "../components/ContactUsCta";
 import { useState } from "react";
-import { ACCEPTABLE_USE_POLICY, PRIVACY_POLICY } from "./PolicyData";
+import { ACCEPTABLE_USE_POLICY, PRIVACY_POLICY, TERMS_AND_CONDITIONS } from "./PolicyData";
 import { PolicyRenderer } from "./PolicyRenderer";
 
 export function TermsPrivacy() {
-  const [activeTab, setActiveTab] = useState<'AUP' | 'PRIVACY'>('AUP');
+  const [activeTab, setActiveTab] = useState<'TERMS' | 'AUP' | 'PRIVACY'>('AUP');
+
+  const policyContent = {
+    TERMS: TERMS_AND_CONDITIONS,
+    AUP: ACCEPTABLE_USE_POLICY,
+    PRIVACY: PRIVACY_POLICY,
+  }[activeTab];
 
   return (
     <div className="min-h-screen bg-white selection:bg-[#01CD86] selection:text-white flex flex-col">
@@ -44,11 +50,21 @@ export function TermsPrivacy() {
               >
                 Privacy Policy
               </button>
+              <button
+                onClick={() => setActiveTab('TERMS')}
+                className={`whitespace-nowrap text-left py-2 transition-colors duration-200 font-semibold text-[16px] md:text-[18px] ${
+                  activeTab === 'TERMS'
+                    ? 'text-[#01CD86]'
+                    : 'text-[#1B1D21] hover:text-[#01CD86]'
+                }`}
+              >
+                Terms and Conditions
+              </button>
             </div>
 
             {/* Right Content */}
             <div className="flex-1 min-w-0">
-              <PolicyRenderer content={activeTab === 'AUP' ? ACCEPTABLE_USE_POLICY : PRIVACY_POLICY} />
+              <PolicyRenderer content={policyContent} />
             </div>
 
           </div>
