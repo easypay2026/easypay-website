@@ -1,4 +1,3 @@
-Terms and Conditions
 Last updated: 20 September 2026
 Easy Pay International Investment Co., Limited
 
