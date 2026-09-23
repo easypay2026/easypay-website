@@ -1,4 +1,3 @@
-Privacy Policy
 Last updated: 20 September 2026
 This Privacy Policy (the "Policy") explains how we, Easy Pay International Investment Co.,Limited ("we", "us" or "ours"), collect, disclose, and protect information about you, the merchant company and its directors, shareholders, employees, contractors, and agents (together, the "Merchant") which are users of the Services. By using our Services, you acknowledge and agree to be bound by it. If you do not agree to this Policy, please stop using the Services immediately.
 This Policy is applicable to you when you use or interact with our Services anywhere in the world, whether through our websites or any other channel (collectively, "Channels"). Depending on the context, "you" may mean any of the End User or Merchant.
