@@ -70,16 +70,16 @@ export function Home() {
         </div>
         
         <div className="relative z-10 max-w-[1400px] mx-auto w-full">
-          <div className="max-w-6xl mx-auto text-center">
+          <div className="w-full mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               className="flex flex-col items-center"
             >
-              <h1 className="w-full text-[clamp(16px,4.5vw,60px)] font-bold text-[#1B1D21] mb-8 leading-[1.1] tracking-tight flex flex-col gap-[12px]">
-                <span className="block whitespace-nowrap">The global payment engine</span>
-                <span className="block whitespace-nowrap">Empowering E-commerce expansion</span>
+              <h1 className="w-full text-4xl md:text-5xl lg:text-6xl font-bold text-[#1B1D21] mb-8 leading-[1.1] tracking-tight flex flex-col gap-[12px]">
+                <span className="block text-[36px] md:text-[48px] lg:text-[72px] lg:whitespace-nowrap">The global payment engine</span>
+                <span className="block text-[36px] md:text-[48px] lg:text-[72px] lg:whitespace-nowrap">Empowering E-commerce expansion</span>
               </h1>
 
               <p className="text-[#606872] mb-12 max-w-2xl mx-auto leading-relaxed text-[18px]">A one-stop local payment solution tailored for E-commerce enterprises expanding overseas. Seamlessly connecting global cash flows to fuel your continuous and efficient business growth.</p>
