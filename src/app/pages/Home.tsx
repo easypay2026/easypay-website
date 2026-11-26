@@ -77,9 +77,9 @@ export function Home() {
               transition={{ duration: 0.6 }}
               className="flex flex-col items-center"
             >
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1B1D21] mb-8 leading-[1.1] tracking-tight flex flex-col gap-[12px]">
-                <span className="text-[36px] md:text-[48px] md:text-[72px]">The global payment engine</span>
-                <span className="text-[36px] md:text-[48px] md:text-[72px]">Empowering E-commerce expansion</span>
+              <h1 className="w-full text-[clamp(16px,4.5vw,60px)] font-bold text-[#1B1D21] mb-8 leading-[1.1] tracking-tight flex flex-col gap-[12px]">
+                <span className="block whitespace-nowrap">The global payment engine</span>
+                <span className="block whitespace-nowrap">Empowering E-commerce expansion</span>
               </h1>
 
               <p className="text-[#606872] mb-12 max-w-2xl mx-auto leading-relaxed text-[18px]">A one-stop local payment solution tailored for E-commerce enterprises expanding overseas. Seamlessly connecting global cash flows to fuel your continuous and efficient business growth.</p>
