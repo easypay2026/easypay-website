@@ -33,20 +33,4 @@ export default defineConfig({
 
   // File types to support raw imports. Never add .css, .tsx, or .ts files to this.
   assetsInclude: ['**/*.svg', '**/*.csv'],
-
-  build: {
-    // Split the framework and the heavier visual libraries into their own
-    // chunks. They change far less often than page code, so browsers can keep
-    // them cached across deploys instead of refetching one large bundle.
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          react: ['react', 'react-dom', 'react-router'],
-          motion: ['motion'],
-          ogl: ['ogl'],
-          geo: ['d3-geo', 'topojson-client'],
-        },
-      },
-    },
-  },
 })

@@ -1,5 +1,6 @@
 import { Navigation } from "../components/Navigation";
 import { Footer } from "../components/Footer";
+import { GlobeWithMarkers } from "../components/GlobeWithMarkers";
 import { ContactUsCta } from "../components/ContactUsCta";
 import { handleEmailClick } from "../utils/email";
 import { motion } from "motion/react";
@@ -14,12 +15,6 @@ import {
   Coins,
   Rocket
 } from "lucide-react";
-import { lazy, Suspense } from "react";
-
-// Deferred so the d3-geo globe does not block this page's first paint.
-const GlobeWithMarkers = lazy(() =>
-  import("../components/GlobeWithMarkers").then(m => ({ default: m.GlobeWithMarkers }))
-);
 
 export function Products() {
   const sections = [
@@ -132,9 +127,7 @@ export function Products() {
               className="hidden lg:block w-full lg:flex-[1] relative mt-10 lg:mt-4 min-h-[350px] lg:min-h-[540px]" style={{ overflow: "visible" }}
             >
               <div className="w-full h-[350px] lg:h-[620px] absolute right-0 top-1/2 -translate-y-1/2 lg:w-[120%]" style={{ overflow: "visible" }}>
-                <Suspense fallback={null}>
-                  <GlobeWithMarkers />
-                </Suspense>
+                <GlobeWithMarkers />
               </div>
             </motion.div>
           </div>

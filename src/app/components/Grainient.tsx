@@ -218,64 +218,17 @@ const Grainient = ({
     setSize();
 
     let raf = 0;
-    // Elapsed shader time, accumulated only while rendering. Deriving iTime
-    // from the raw timestamp would make the animation jump forward by however
-    // long the loop was paused.
-    let elapsed = 0;
-    let last = 0;
-    let onScreen = true;
-    let running = false;
-
+    const t0 = performance.now();
     const loop = (t: number) => {
-      if (last === 0) last = t;
-      elapsed += (t - last) * 0.001;
-      last = t;
-      program.uniforms.iTime.value = elapsed;
+      program.uniforms.iTime.value = (t - t0) * 0.001;
       renderer.render({ scene: mesh });
       raf = requestAnimationFrame(loop);
     };
-
-    const start = () => {
-      if (running) return;
-      running = true;
-      last = 0;
-      raf = requestAnimationFrame(loop);
-    };
-
-    const stop = () => {
-      if (!running) return;
-      running = false;
-      cancelAnimationFrame(raf);
-      raf = 0;
-    };
-
-    const sync = () => {
-      if (onScreen && !document.hidden) start();
-      else stop();
-    };
-
-    // Pause the shader when the hero scrolls out of view or the tab is hidden.
-    // A full-screen fragment shader at 60fps is otherwise the single largest
-    // source of scroll jank on the page.
-    const io = new IntersectionObserver(
-      entries => {
-        onScreen = entries[entries.length - 1].isIntersecting;
-        sync();
-      },
-      { threshold: 0 }
-    );
-    io.observe(container);
-    document.addEventListener('visibilitychange', sync);
-    sync();
+    raf = requestAnimationFrame(loop);
 
     return () => {
-      stop();
-      io.disconnect();
-      document.removeEventListener('visibilitychange', sync);
+      cancelAnimationFrame(raf);
       ro.disconnect();
-      // Release the GPU context instead of waiting for GC; browsers cap the
-      // number of live WebGL contexts per page.
-      gl.getExtension('WEBGL_lose_context')?.loseContext();
       try {
         container.removeChild(canvas);
       } catch {

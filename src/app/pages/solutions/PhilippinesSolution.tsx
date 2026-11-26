@@ -83,7 +83,7 @@ export function PhilippinesSolution() {
               {
                 title: "MOBA / Esports Hub",
                 subtitle: "",
-                desc: "The Philippine user base for MOBA games (like MLBB) ranks among the top three globally, driving massive transaction volumes and top-up revenue.",
+                desc: "The Philippine user base for MOBA (like MLBB) ranks among the top three globally, driving massive transaction volumes and top-up revenue.",
                 icon: <Globe size={32} strokeWidth={1.5} />
               },
               {
@@ -114,7 +114,7 @@ export function PhilippinesSolution() {
                   <h3 className="text-[20px] font-semibold text-[#1B1D21] mb-3 leading-snug transition-colors duration-300">
                     {item.titleIcon ? item.titleIcon : item.title}
                   </h3>
-                  <p className="text-[#606872] text-[15px] leading-relaxed max-w-[75%] pr-8">
+                  <p className="text-[#606872] text-[15px] leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
@@ -151,7 +151,7 @@ export function PhilippinesSolution() {
               },
               {
                 title: "PayMaya",
-                desc: "The second-largest e-wallet, dominating high-frequency payment and top-up scenarios for online gaming and entertainment.",
+                desc: "The second-largest e-wallet, dominating high-frequency payment and top-up scenarios for online E-commerce and entertainment.",
               },
               {
                 title: "GrabPay",

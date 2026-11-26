@@ -34,7 +34,7 @@ export function EgyptSolution() {
               </h2>
 
               <p className="text-[#606872] text-[16px] leading-relaxed max-w-[640px] mb-10">
-                Unlock Africa's largest blue-ocean gaming market. Pioneer integrations with Fawry and Vodafone Cash, accurately reaching a mobile payment network of 110 million young population.
+                Unlock Africa's largest blue-ocean E-commerce market. Pioneer integrations with Fawry and Vodafone Cash, accurately reaching a mobile payment network of 110 million young population.
               </p>
 
               <button onClick={handleEmailClick} className="px-8 h-[48px] bg-[#01CD86] text-[#1B1D21] text-[15px] font-semibold uppercase rounded-[8px] hover:bg-[#20e280] transition-all duration-300 w-fit group overflow-hidden">
@@ -82,7 +82,7 @@ export function EgyptSolution() {
             {[
               {
                 title: "Massive Demographic Dividend",
-                desc: "With a population of 110 million and a median age of just 24, Egypt currently ranks #1 in mobile game downloads across Africa.",
+                desc: "With a population of 110 million and a median age of just 24, Egypt currently ranks #1 in mobile E-commerce downloads across Africa.",
                 icon: <Globe size={32} strokeWidth={1.5} />
               },
               {

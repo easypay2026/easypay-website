@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import * as d3 from "d3-geo";
-import { loadWorldFeatures } from "./worldAtlas";
+import * as topojson from "topojson-client";
 
 // ── Config ────────────────────────────────────────────────────────────────────
 const PI2  = Math.PI * 2;
@@ -32,12 +32,6 @@ export function StaticGlobeMap({ target }: { target: keyof typeof GLOBE_TARGETS 
   const geoFeatures = useRef<any[] | null>(null);
   const startTimeRef = useRef<number>(0);
   const animFrameRef = useRef<number>(0);
-  // Cache of the last applied backing-store size, so we only resize the canvas
-  // when the layout actually changed. Reassigning canvas.width/height every
-  // frame reallocates the backing store and is a major source of jank.
-  const sizeRef = useRef({ w: 0, h: 0, dpr: 0 });
-  // Mirrors the label state pushed to React, to avoid a setState per frame.
-  const layoutRef = useRef({ cx: 0, cy: 0, dotX: 0, dotY: 0, labelAlpha: 0 });
 
   const draw = useCallback(() => {
     const canvas = canvasRef.current;
@@ -47,28 +41,19 @@ export function StaticGlobeMap({ target }: { target: keyof typeof GLOBE_TARGETS 
 
     const parent = canvas.parentElement;
     if (!parent) return;
-
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    
+    const dpr = window.devicePixelRatio || 1;
     const rect = parent.getBoundingClientRect();
     const padX = 100;
     const padY = 100;
 
-    const cssW = rect.width + padX * 2;
-    const cssH = rect.height + padY * 2;
-    const bufW = Math.round(cssW * dpr);
-    const bufH = Math.round(cssH * dpr);
-
-    const size = sizeRef.current;
-    if (size.w !== bufW || size.h !== bufH || size.dpr !== dpr) {
-      canvas.style.left = `-${padX}px`;
-      canvas.style.top = `-${padY}px`;
-      canvas.style.width = `${cssW}px`;
-      canvas.style.height = `${cssH}px`;
-      canvas.width = bufW;
-      canvas.height = bufH;
-      sizeRef.current = { w: bufW, h: bufH, dpr };
-    }
-
+    canvas.style.left = `-${padX}px`;
+    canvas.style.top = `-${padY}px`;
+    canvas.style.width = `${rect.width + padX * 2}px`;
+    canvas.style.height = `${rect.height + padY * 2}px`;
+    canvas.width  = (rect.width + padX * 2) * dpr;
+    canvas.height = (rect.height + padY * 2) * dpr;
+    
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
     const parentW = rect.width;
@@ -83,7 +68,7 @@ export function StaticGlobeMap({ target }: { target: keyof typeof GLOBE_TARGETS 
     const cx = parentW / 2 + padX;
     const cy = parentH / 2 + padY;
 
-    ctx.clearRect(0, 0, cssW, cssH);
+    ctx.clearRect(0, 0, canvas.width / dpr, canvas.height / dpr);
 
     // Animation progress
     const elapsed = performance.now() - startTimeRef.current;
@@ -183,23 +168,12 @@ export function StaticGlobeMap({ target }: { target: keyof typeof GLOBE_TARGETS 
       ctx.restore();
     }
 
-    // Only re-render React when the label actually moves or fades by a visible
-    // amount. Pushing state every frame re-renders the whole subtree at 60fps.
-    const nextLayout = {
-      cx, cy,
-      dotX: dotX - padX,
+    setGlobeLayout({ 
+      cx, cy, 
+      dotX: dotX - padX, 
       dotY: dotY - padY,
       labelAlpha
-    };
-    const prev = layoutRef.current;
-    if (
-      Math.abs(prev.dotX - nextLayout.dotX) > 0.5 ||
-      Math.abs(prev.dotY - nextLayout.dotY) > 0.5 ||
-      Math.abs(prev.labelAlpha - nextLayout.labelAlpha) > 0.01
-    ) {
-      layoutRef.current = nextLayout;
-      setGlobeLayout(nextLayout);
-    }
+    });
 
     if (progress < 1) {
       animFrameRef.current = requestAnimationFrame(draw);
@@ -208,20 +182,18 @@ export function StaticGlobeMap({ target }: { target: keyof typeof GLOBE_TARGETS 
 
   // Load GeoData
   useEffect(() => {
-    let alive = true;
-    loadWorldFeatures()
-      .then(features => {
-        if (!alive) return;
-        geoFeatures.current = features;
+    fetch("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json")
+      .then(res => res.json())
+      .then(topology => {
+        const world = topojson.feature(topology, topology.objects.countries);
+        // @ts-ignore
+        geoFeatures.current = world.features;
         startTimeRef.current = performance.now();
         animFrameRef.current = requestAnimationFrame(draw);
       })
       .catch(err => console.error("Failed to fetch map data", err));
 
-    return () => {
-      alive = false;
-      cancelAnimationFrame(animFrameRef.current);
-    };
+    return () => cancelAnimationFrame(animFrameRef.current);
   }, [draw]);
 
   // Restart animation when target changes

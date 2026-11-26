@@ -1,6 +1,6 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import * as d3 from "d3-geo";
-import { loadWorldFeatures } from "./worldAtlas";
+import * as topojson from "topojson-client";
 
 // ── Config ────────────────────────────────────────────────────────────────────
 const DEG  = Math.PI / 180;
@@ -57,6 +57,7 @@ const REGION_MAPPING: Record<string, number> = {
 export function GlobeWithMarkers() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const labelRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [globeLayout, setGlobeLayout] = useState({ cx: 0, cy: 0, gR: 0 });
   const anim      = useRef({
     phase:    "pausing" as "pausing" | "moving",
     station:  0,
@@ -68,13 +69,14 @@ export function GlobeWithMarkers() {
   const geoFeatures = useRef<any[] | null>(null);
 
   useEffect(() => {
-    let alive = true;
-    loadWorldFeatures()
-      .then(features => {
-        if (alive) geoFeatures.current = features;
+    fetch("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json")
+      .then(res => res.json())
+      .then(topology => {
+        const world = topojson.feature(topology, topology.objects.countries);
+        // @ts-ignore
+        geoFeatures.current = world.features;
       })
       .catch(err => console.error("Failed to fetch map data", err));
-    return () => { alive = false; };
   }, []);
 
   useEffect(() => {
@@ -104,6 +106,8 @@ export function GlobeWithMarkers() {
     };
     resize();
 
+    let currentLayout = { cx: 0, cy: 0, gR: 0 };
+
     const draw = () => {
       const parent = canvas.parentElement;
       if (!parent) return;
@@ -124,6 +128,11 @@ export function GlobeWithMarkers() {
       
       const cx = parentW / 2 + padX;
       const cy = parentH / 2 + padY;
+
+      if (currentLayout.cx !== cx || currentLayout.cy !== cy || currentLayout.gR !== innerR) {
+        currentLayout = { cx, cy, gR: innerR };
+        setGlobeLayout({ cx, cy, gR: innerR });
+      }
 
       // ── Animation state ──────────────────────────────────────────
       const a = anim.current;
@@ -285,48 +294,10 @@ export function GlobeWithMarkers() {
       animId = requestAnimationFrame(draw);
     };
 
-    let onScreen = true;
-    let running = false;
-
-    const start = () => {
-      if (running) return;
-      running = true;
-      draw();
-    };
-
-    const stop = () => {
-      if (!running) return;
-      running = false;
-      cancelAnimationFrame(animId);
-    };
-
-    const sync = () => {
-      if (onScreen && !document.hidden) start();
-      else stop();
-    };
-
-    // The globe animates continuously, so it must stop when off-screen or on a
-    // hidden tab; otherwise it burns a full rAF budget for nothing.
-    const io = new IntersectionObserver(
-      entries => {
-        onScreen = entries[entries.length - 1].isIntersecting;
-        sync();
-      },
-      { threshold: 0 }
-    );
-    const host = canvas.parentElement ?? canvas;
-    io.observe(host);
-    document.addEventListener('visibilitychange', sync);
-    sync();
-
+    draw();
     const obs = new ResizeObserver(resize);
     obs.observe(canvas);
-    return () => {
-      stop();
-      io.disconnect();
-      document.removeEventListener('visibilitychange', sync);
-      obs.disconnect();
-    };
+    return () => { cancelAnimationFrame(animId); obs.disconnect(); };
   }, []);
 
   return (

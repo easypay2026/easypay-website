@@ -10,12 +10,9 @@ import {
   MessageSquare,
   LifeBuoy
 } from "lucide-react";
-import { useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { handleEmailClick } from "../utils/email";
-import { isBannerDismissed, dismissBanner } from "../utils/announcementBanner";
-
-const STATEMENT_PATH = "/statement-of-non-affiliation";
 
 
 import EasyPayLogo from "../../imports/EasyPay";
@@ -23,34 +20,38 @@ import EasyPayLogo from "../../imports/EasyPay";
   export function Navigation() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isMobileSolutionOpen, setIsMobileSolutionOpen] = useState(false);
-    // Read the cookie during the initial state so a returning visitor never
-    // sees the banner flash in before it is hidden.
-    const [showBanner, setShowBanner] = useState(() => !isBannerDismissed());
+    const [showBanner, setShowBanner] = useState(true);
     const [showStatement, setShowStatement] = useState(false);
     const location = useLocation();
+    useLayoutEffect(() => {
+      if (!showStatement) return;
+      const body = document.body;
+      const html = document.documentElement;
+      const scrollY = window.scrollY;
+      const previousBody = body.getAttribute('style');
+      const previousOverflow = html.style.overflow;
+      const scrollbarWidth = window.innerWidth - html.clientWidth;
+      const paddingRight = parseFloat(window.getComputedStyle(body).paddingRight) || 0;
+      Object.assign(body.style, {
+        position: 'fixed', top: '-' + scrollY + 'px', width: '100%',
+        overflow: 'hidden', paddingRight: (paddingRight + scrollbarWidth) + 'px',
+      });
+      html.style.overflow = 'hidden';
+      return () => {
+        if (previousBody === null) body.removeAttribute('style');
+        else body.setAttribute('style', previousBody);
+        html.style.overflow = previousOverflow;
+        const behavior = html.style.scrollBehavior;
+        html.style.scrollBehavior = 'auto';
+        window.scrollTo(0, scrollY);
+        html.style.scrollBehavior = behavior;
+      };
+    }, [showStatement]);
   
   const handleNavClick = (path: string, e: React.MouseEvent) => {
-    // Clicking a link to the page you are already on: react-router treats this
-    // as a no-op, so scroll back to the top instead. A full reload here would
-    // hit the server for a path that only exists client-side.
     if (location.pathname === path) {
       e.preventDefault();
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-    setIsMenuOpen(false);
-  };
-
-  const isOnStatementPage = location.pathname === STATEMENT_PATH;
-
-  // "Read All" while already on the statement page has nowhere to navigate, so
-  // reload it instead. Every click refreshes again, with no click limit.
-  // Reloading a client-only route needs the host to rewrite unknown paths to
-  // index.html; vercel.json does that, otherwise this would land on a 404.
-  const handleStatementClick = (e: React.MouseEvent) => {
-    if (isOnStatementPage) {
-      e.preventDefault();
       window.location.reload();
-      return;
     }
     setIsMenuOpen(false);
   };
@@ -127,9 +128,8 @@ import EasyPayLogo from "../../imports/EasyPay";
                 Solemn Statement: Our company has not issued any virtual currency and is strictly not affiliated with the &ldquo;EasyPay&rdquo; crypto-payment project.
               </span>
               <Link
-                to={STATEMENT_PATH}
-                onClick={handleStatementClick}
-                aria-current={isOnStatementPage ? "page" : undefined}
+                to="/statement-of-non-affiliation"
+                onClick={(e) => handleNavClick("/statement-of-non-affiliation", e)}
                 className="font-semibold underline underline-offset-2 decoration-white/50 hover:decoration-white transition-colors text-[14px]"
               >
                 Read All
@@ -153,7 +153,7 @@ import EasyPayLogo from "../../imports/EasyPay";
             className="absolute inset-0 bg-black/60 backdrop-blur-sm"
             onClick={() => setShowStatement(false)}
           />
-          <div className="relative w-full max-w-[640px] max-h-[85vh] overflow-y-auto bg-white rounded-2xl shadow-2xl">
+          <div className="relative w-full max-w-[640px] max-h-[85vh] overflow-y-auto overscroll-contain bg-white rounded-2xl shadow-2xl">
             <div className="px-8 sm:px-10 pt-5 sm:pt-6 pb-8 sm:pb-10">
               <div className="flex items-center justify-between gap-4 mb-6 mt-2">
                 <h2 className="text-[20px] sm:text-[24px] font-bold text-[#1B1D21] tracking-tight text-left">
@@ -191,11 +191,9 @@ import EasyPayLogo from "../../imports/EasyPay";
               </div>
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
                 <Link
-                  to={STATEMENT_PATH}
+                  to="/statement-of-non-affiliation"
                   onClick={(e) => {
-                    handleStatementClick(e);
-                    // Redundant when the click triggered a reload, but needed
-                    // when navigating in from another page.
+                    handleNavClick("/statement-of-non-affiliation", e);
                     setShowStatement(false);
                   }}
                   className="w-full sm:flex-1 h-[44px] flex items-center justify-center border border-gray-200 text-[#1B1D21] text-[14px] font-semibold rounded-xl hover:bg-gray-50 transition-colors"
@@ -206,7 +204,6 @@ import EasyPayLogo from "../../imports/EasyPay";
                   onClick={() => {
                     setShowStatement(false);
                     setShowBanner(false);
-                    dismissBanner();
                   }}
                   className="w-full sm:flex-1 h-[44px] bg-[#1B1D21] text-white text-[14px] font-semibold rounded-xl hover:bg-[#2A2E33] transition-colors"
                 >

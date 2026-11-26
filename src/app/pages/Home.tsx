@@ -8,6 +8,7 @@ import { PartnerLogos } from "../components/PartnerLogos";
 import { ProductAndSolution } from "../components/ProductAndSolution";
 import { FAQ } from "../components/FAQ";
 import { WhyChooseUs } from "../components/WhyChooseUs";
+import { PartnerMarquee } from "../components/PartnerMarquee";
 import Grainient from "../components/Grainient";
 import { motion } from "motion/react";
 import { 
@@ -20,14 +21,8 @@ import {
   TrendingUp,
   Users
 } from "lucide-react";
-import { useState, lazy, Suspense } from "react";
+import { useState } from "react";
 import { ContactUsCta } from "../components/ContactUsCta";
-
-// The marquee carries ~216KB of generated logo path data. It is absolutely
-// positioned at the bottom of the hero, so deferring it costs no layout shift.
-const PartnerMarquee = lazy(() =>
-  import("../components/PartnerMarquee").then(m => ({ default: m.PartnerMarquee }))
-);
 
 import { TechnicalBarriersAccordion } from "../components/TechnicalBarriersAccordion";
 import { handleEmailClick } from "../utils/email";
@@ -84,10 +79,10 @@ export function Home() {
             >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1B1D21] mb-8 leading-[1.1] tracking-tight flex flex-col gap-[12px]">
                 <span className="text-[36px] md:text-[48px] md:text-[72px]">The global payment engine</span>
-                <span className="text-[36px] md:text-[48px] md:text-[72px]">Empowering game expansion</span>
+                <span className="text-[36px] md:text-[48px] md:text-[72px]">Empowering E-commerce expansion</span>
               </h1>
 
-              <p className="text-[#606872] mb-12 max-w-2xl mx-auto leading-relaxed text-[18px]">A one-stop local payment solution tailored for gaming enterprises expanding overseas. Seamlessly connecting global cash flows to fuel your continuous and efficient business growth.</p>
+              <p className="text-[#606872] mb-12 max-w-2xl mx-auto leading-relaxed text-[18px]">A one-stop local payment solution tailored for E-commerce enterprises expanding overseas. Seamlessly connecting global cash flows to fuel your continuous and efficient business growth.</p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button onClick={handleEmailClick} className="px-8 h-[52px] bg-[#01CD86] text-[#000000] text-[16px] font-semibold tracking-wide rounded-[8px] hover:bg-[#20e280] transition-colors duration-200  flex items-center justify-center gap-2 group overflow-hidden">
@@ -104,9 +99,7 @@ export function Home() {
           </div>
         </div>
 
-        <Suspense fallback={null}>
-          <PartnerMarquee />
-        </Suspense>
+        <PartnerMarquee />
       </section>
 
       {/* Why Choose Us Section */}

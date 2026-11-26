@@ -1,24 +1,19 @@
 import { motion } from "motion/react";
-import { lazy, Suspense } from "react";
-
-// These logos are generated Figma exports carrying ~130KB of inline path data.
-// They render below the fold, so they are loaded as a separate chunk rather
-// than inflating the initial bundle.
-const F45 = () => import("../../imports/Frame45-1");
-const F44 = () => import("../../imports/Frame44-1");
-
-const F45_Group7 = lazy(() => F45().then(m => ({ default: m.Group7 })));
-const F45_Logo = lazy(() => F45().then(m => ({ default: m.Logo })));
-const F45_Group4 = lazy(() => F45().then(m => ({ default: m.Group4 })));
-const F45_Image7 = lazy(() => F45().then(m => ({ default: m.Image7Vectorized })));
-const F45_Group8 = lazy(() => F45().then(m => ({ default: m.Group8 })));
-
-const F44_Group1 = lazy(() => F44().then(m => ({ default: m.Group1 })));
-const F44_Group5 = lazy(() => F44().then(m => ({ default: m.Group5 })));
-const F44_Group2 = lazy(() => F44().then(m => ({ default: m.Group2 })));
-const F44_Group4 = lazy(() => F44().then(m => ({ default: m.Group4 })));
-const F44_Group3 = lazy(() => F44().then(m => ({ default: m.Group3 })));
-const F44_LogoW = lazy(() => F44().then(m => ({ default: m.LogoW })));
+import { 
+  Group7 as F45_Group7, 
+  Logo as F45_Logo, 
+  Group4 as F45_Group4, 
+  Image7Vectorized as F45_Image7, 
+  Group8 as F45_Group8 
+} from "../../imports/Frame45-1";
+import { 
+  Group1 as F44_Group1, 
+  Group5 as F44_Group5, 
+  Group2 as F44_Group2, 
+  Group4 as F44_Group4, 
+  Group3 as F44_Group3, 
+  LogoW as F44_LogoW 
+} from "../../imports/Frame44-1";
 
 export function PartnerLogos() {
   return (
@@ -29,7 +24,7 @@ export function PartnerLogos() {
             OUR PARTNERS
           </span>
           <h2 className="text-[32px] md:text-[36px] lg:text-[48px] font-bold text-[#1B1D21] leading-tight whitespace-normal md:whitespace-nowrap">
-            Trusted by <span className="text-[#01CD86]">Top Global</span> Game Publishers
+            Trusted by <span className="text-[#01CD86]">Top Global</span> Publishers
           </h2>
         </div>
 
@@ -41,7 +36,6 @@ export function PartnerLogos() {
             transition={{ duration: 0.6 }}
             className="w-full opacity-70 hover:opacity-100 transition-opacity duration-500"
           >
-           <Suspense fallback={<div className="min-h-[200px]" />}>
             {/* Desktop Layout - Unchanged */}
             <div className="hidden lg:flex flex-col gap-[68px] w-full">
               <div className="flex items-center justify-between w-full [&>div]:scale-[0.95] [&>div]:origin-center [&>div]:transition-transform">
@@ -84,7 +78,6 @@ export function PartnerLogos() {
               <div className="w-1/2 flex justify-start items-center origin-left scale-75"><F44_Group3 /></div>
               <div className="w-1/2 flex justify-start items-center origin-left scale-75"><F44_LogoW /></div>
             </div>
-           </Suspense>
           </motion.div>
         </div>
       </div>

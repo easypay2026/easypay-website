@@ -78,10 +78,10 @@ export function AboutUs() {
           >
             <h1 className="text-[56px] md:text-[80px] lg:text-[110px] font-bold text-[#1B1D21] leading-[1.05] tracking-tight flex flex-col gap-[8px] uppercase">
               <span className="text-[36px] md:text-[48px] md:text-[72px] lg:text-[80px] lowercase tracking-normal">The global payment engine</span>
-              <span className="text-[36px] md:text-[48px] md:text-[72px] lg:text-[80px] lowercase tracking-normal text-[#1B1D21]">Empowering game expansion</span>
+              <span className="text-[36px] md:text-[48px] md:text-[72px] lg:text-[80px] lowercase tracking-normal text-[#1B1D21]">Empowering E-commerce expansion</span>
             </h1>
             <p className="text-[#606872] mt-6 leading-relaxed text-[18px] max-w-[800px]">
-              A one-stop local payment solution tailored for gaming enterprises expanding overseas.<br />Seamlessly connecting global cash flows to fuel your continuous and efficient business growth.
+              A one-stop local payment solution tailored for E-commerce enterprises expanding overseas.<br />Seamlessly connecting global cash flows to fuel your continuous and efficient business growth.
             </p>
           </motion.div>
         </div>

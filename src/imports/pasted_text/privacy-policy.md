@@ -1,3 +1,4 @@
+Privacy Policy
 Last updated: 20 September 2026
 This Privacy Policy (the "Policy") explains how we, Easy Pay International Investment Co.,Limited ("we", "us" or "ours"), collect, disclose, and protect information about you, the merchant company and its directors, shareholders, employees, contractors, and agents (together, the "Merchant") which are users of the Services. By using our Services, you acknowledge and agree to be bound by it. If you do not agree to this Policy, please stop using the Services immediately.
 This Policy is applicable to you when you use or interact with our Services anywhere in the world, whether through our websites or any other channel (collectively, "Channels"). Depending on the context, "you" may mean any of the End User or Merchant.
@@ -93,7 +94,7 @@ a. providing the Services;
 b. evaluating your satisfaction with our Services, platform and features;
 c. developing new products or enhancing existing products and services;
 d. monitoring and analysing trends, usage and other user activities on our Channels to optimise user experience and to improve the Services.
-4.11 Location Information: When you use certain features of the Services, we may collect information about your precise or approximate location as determined by data such as your IP address or, where you have enabled location access in your browser, your device’s location services. You can control or disable location access at any time in your browser or device settings. We use such information for:
+4.11 Location Information: When you use certain features of the Services, we may collect information about your precise or approximate location as determined by data such as your IP address or, where you have enabled location access in your browser, your device's location services. You can control or disable location access at any time in your browser or device settings. We use such information for:
 a. providing the Services;
 b. enabling you to access and use the Account;
 c. managing risk, fraud and abuse of our Services and Channels or breaches of the Master Merchant Agreement and other applicable service terms;
@@ -154,7 +155,7 @@ THIRD PARTY LINKS AND SERVICES
 UPDATES TO THIS POLICY
 13.1 We reserve the right to make changes to this Policy at any time by posting a revised version on our website and updating the "Last Updated" date at the top of the Policy. By using our services following such notice or publication, to the extent permitted by applicable law, you consent to the revised Policy. If you do not agree with any of the changes made, you have the option to deactivate your account with us at any time.
 CONTACT
-14.1 If you have questions or concerns about this Policy or a specific request related to your Personal Information, please contact us at  support@easypayx.com and we will endeavour to deal with your request as soon as possible.
+14.1 If you have questions or concerns about this Policy or a specific request related to your Personal Information, please contact us at info@easypayx.com and we will endeavour to deal with your request as soon as possible.
 14.2 You can also send physical mail to:
 Easy Pay International Investment Co.,Limited
 Room 1633, 16/F Radio City, 505 Hennessy Road, Causeway Bay, Hong Kong

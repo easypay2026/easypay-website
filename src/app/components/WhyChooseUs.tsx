@@ -11,8 +11,8 @@ export function WhyChooseUs() {
   const reasons = [
     {
       icon: <Gamepad2 size={40} strokeWidth={1} />,
-      title: "Dedicated to Global Gaming",
-      desc: "Providing efficient and secure one-stop payment solutions deeply aligned with the monetization scenarios and needs of the gaming industry.",
+      title: "Dedicated to Global E-commerce",
+      desc: "Providing efficient and secure one-stop payment solutions deeply aligned with the monetization scenarios and needs of the E-commerce industry.",
       link: "/products/acquiring"
     },
     {

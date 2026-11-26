@@ -1,17 +1,12 @@
 import { motion } from "motion/react";
 import { Link } from "react-router";
 import { ArrowRight, Globe, CheckCircle, Zap } from "lucide-react";
-import React, { useState, useEffect, lazy, Suspense } from "react";
+import { GlobeWithMarkers } from "./GlobeWithMarkers";
+import React, { useState, useEffect } from "react";
 import Frame50 from "../../imports/Frame50";
 import Frame52 from "../../imports/Frame52";
 import Frame53 from "../../imports/Frame53";
 import Frame54 from "../../imports/Frame54";
-
-// The globe pulls in d3-geo and only renders at lg and up, so keep it out of
-// the initial bundle and load it when this section is actually reached.
-const GlobeWithMarkers = lazy(() =>
-  import("./GlobeWithMarkers").then(m => ({ default: m.GlobeWithMarkers }))
-);
 
 const SOLUTIONS: { flag: React.ReactNode; title: string; desc: string; link: string }[] = [
   {
@@ -89,9 +84,7 @@ export function ProductAndSolution() {
               style={{ minHeight: 540, overflow: "visible" }}
             >
               <div className="w-full h-[350px] lg:h-[620px] absolute right-0 top-1/2 -translate-y-1/2 lg:w-[120%]" style={{ overflow: "visible" }}>
-                <Suspense fallback={null}>
-                  <GlobeWithMarkers />
-                </Suspense>
+                <GlobeWithMarkers />
               </div>
             </motion.div>
         </div>

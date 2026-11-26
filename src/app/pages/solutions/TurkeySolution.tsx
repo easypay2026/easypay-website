@@ -32,7 +32,7 @@ export function TurkeySolution() {
               </h2>
 
               <p className="text-[#606872] text-[16px] leading-relaxed max-w-[640px] mb-10">
-                Capture the Eurasian gaming hub. Supporting local Troy cards and international card networks, covering 95%+ of paying users while capitalizing on Lira depreciation benefits.
+                Capture the Eurasian E-commerce hub. Supporting local Troy cards and international card networks, covering 95%+ of paying users while capitalizing on Lira depreciation benefits.
               </p>
 
               <button onClick={handleEmailClick} className="px-8 h-[48px] bg-[#01CD86] text-[#1B1D21] text-[15px] font-semibold uppercase rounded-[8px] hover:bg-[#20e280] transition-all duration-300 w-fit group overflow-hidden">
@@ -79,7 +79,7 @@ export function TurkeySolution() {
             {[
               {
                 title: "High Willingness-to-Pay Market",
-                desc: "Turkey's mobile gaming ARPU (Average Revenue Per User) ranks among the top globally, featuring exceptionally high payment conversion rates, particularly for Strategy/SLG genres.",
+                desc: "Turkey's mobile E-commerce ARPU (Average Revenue Per User) ranks among the top globally, featuring exceptionally high payment conversion rates, particularly for Strategy/SLG genres.",
                 icon: <Globe size={32} strokeWidth={1.5} />
               },
               {
@@ -108,7 +108,7 @@ export function TurkeySolution() {
                   <h3 className="text-[20px] font-semibold text-[#1B1D21] mb-3 leading-snug transition-colors duration-300">
                     {item.title}
                   </h3>
-                  <p className="text-[#606872] text-[15px] leading-relaxed max-w-[75%] pr-8">
+                  <p className="text-[#606872] text-[15px] leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
